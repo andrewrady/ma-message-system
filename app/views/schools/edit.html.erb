@@ -1,0 +1,20 @@
+<%= form_with(model: @school, local: true, url: school_path(@school)) do |f| %>
+  <% if @school.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@school.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @school.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
+  <%= f.submit %>
+<% end %>

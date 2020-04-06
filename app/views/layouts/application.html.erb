@@ -21,11 +21,13 @@
               About
             </a>
           </div>
-          <div class="site-menu__item py-2">
-            <a href="#" class="site-menu__link">
-              Logout
-            </a>
-          </div>
+          <% if user_signed_in? %>
+            <div class="site-menu__item py-2">
+              <a href="#" class="site-menu__link">
+                Logout
+              </a>
+            </div>
+            <% end %>
         </nav>
       </div>
     </header>
