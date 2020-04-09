@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'friendly_id'
+gem 'wysiwyg-rails'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

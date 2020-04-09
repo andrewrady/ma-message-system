@@ -1,20 +1,29 @@
-<%= form_with(model: @school, local: true, url: school_path(@school)) do |f| %>
-  <% if @school.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@school.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @school.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+<div class="block-container mx-7">
+  <%= form_with(model: @school, local: true, url: school_path(@school), html: { class: 'w-100'}) do |f| %>
+    <% if @school.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@school.errors.count, "error") %> prohibited
+          this post from being saved:
+        </h2>
+        <ul>
+          <% @school.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.text_area :content, :id => "edit" %>
+
+    <div class="flex--center-content my-3">
+      <%= f.submit('Submit', class: 'button button--lg' ) %>
     </div>
   <% end %>
+</div>
 
-  <%= f.label :content %>
-  <%= f.text_area :content %>
 
-  <%= f.submit %>
-<% end %>
+<script type="text/javascript" src = "../../assets/froala_editor.pkgd.min.js"></script>
+<script>
+ new FroalaEditor('#edit')
+</script>
+
