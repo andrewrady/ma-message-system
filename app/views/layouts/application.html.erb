@@ -23,9 +23,7 @@
               <%= link_to  "Edit", edit_school_path(current_user.slug), class: 'site-menu__link' %>
             </div>
             <div class="site-menu__item py-2">
-              <a href="#" class="site-menu__link">
-                Logout
-              </a>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'site-menu__link' %>    
             </div>
             <% end %>
         </nav>

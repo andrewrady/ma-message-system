@@ -1,23 +1,45 @@
-  <%= form_with(model: @school, local: true, url: school_path(@school), html: { class: 'w-100'}) do |f| %>
-    <% if @school.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@school.errors.count, "error") %> prohibited
-          this post from being saved:
-        </h2>
-        <ul>
-          <% @school.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <%= f.text_area :content, :id => "edit" %>
-
-    <div class="flex--center-content my-3">
-      <%= f.submit('Submit', class: 'button button--lg' ) %>
+<table class="pui-table my-3">
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Short Code</th>
+      <th>Clicks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="url">
+        <%= @link.url %>
+      </td>
+      <td data-label="slug">
+        <%= @link.shortSlug %>
+      </td>
+      <td data-label="views">
+        <%= @link.clicked %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<%= form_with(model: @school, local: true, url: school_path(@school), html: { class: 'w-100'}) do |f| %>
+  <% if @school.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@school.errors.count, "error") %> prohibited
+        this post from being saved:
+      </h2>
+      <ul>
+        <% @school.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
+  <%= f.text_area :content, :id => "edit" %>
+
+  <div class="flex--center-content my-3">
+    <%= f.submit('Submit', class: 'button button--lg' ) %>
+  </div>
+<% end %>
 
 
 <script type="text/javascript" src = "../../assets/froala_editor.pkgd.min.js"></script>

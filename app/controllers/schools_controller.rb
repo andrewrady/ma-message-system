@@ -7,6 +7,7 @@ class SchoolsController < ApplicationController
 
   def edit
     @school = User.friendly.find(params[:id])
+    @link = Link.where(url: @school.slug).first
 
     if(current_user.id != @school.id)
       redirect_to school_path(@school)
