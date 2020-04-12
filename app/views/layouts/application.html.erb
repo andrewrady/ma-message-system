@@ -10,18 +10,18 @@
   </head>
 
   <body>
-    <header class="site-header background-med-blue site-menu-wrapper py-3 px-3 ">
+    <header class="site-header background-med-blue site-menu-wrapper py-3 px-3 mb-3">
       <div class="block-container flex--justify-between">
         <div class="text-white py-2">
-          MA
         </div>
         <nav class="site-menu background-med-blue inverted">
-          <div class="site-menu__item py-2">
-            <a href="#" class="site-menu__link">
-              About
-            </a>
-          </div>
           <% if user_signed_in? %>
+            <div class="site-menu__item py-2">
+              <%= link_to  "Posts", school_path(current_user.slug), class: 'site-menu__link' %>
+            </div>
+            <div class="site-menu__item py-2">
+              <%= link_to  "Edit", edit_school_path(current_user.slug), class: 'site-menu__link' %>
+            </div>
             <div class="site-menu__item py-2">
               <a href="#" class="site-menu__link">
                 Logout
@@ -32,8 +32,19 @@
       </div>
     </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="block-container mx-7">
+      <% if notice %>
+        <div class="pui-message pui-message--warning">
+          <p><%= notice %></p>
+        </div>
+      <div>
+      <% end %>
+      <% if alert %>
+        <div class="pui-message pui-message--error">
+          <p class="alert"><%= alert %></p>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,1 +1,3 @@
-<%= @school.content.html_safe %>
+<% if @school.content %>
+  <%= @school.content.html_safe %>
+<% end %>

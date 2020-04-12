@@ -1,4 +1,3 @@
-<div class="block-container mx-7">
   <%= form_with(model: @school, local: true, url: school_path(@school), html: { class: 'w-100'}) do |f| %>
     <% if @school.errors.any? %>
       <div id="error_explanation">
@@ -19,7 +18,6 @@
       <%= f.submit('Submit', class: 'button button--lg' ) %>
     </div>
   <% end %>
-</div>
 
 
 <script type="text/javascript" src = "../../assets/froala_editor.pkgd.min.js"></script>
