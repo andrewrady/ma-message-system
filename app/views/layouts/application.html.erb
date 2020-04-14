@@ -30,16 +30,24 @@
       </div>
     </header>
 
-    <div class="block-container mx-7">
+    <% if controller_name != 'school' && action_name != 'show' %>
+      <div class="block-container mx-7">
+    <% else %>
+      <div>
+    <% end %>
       <% if notice %>
-        <div class="pui-message pui-message--warning">
-          <p><%= notice %></p>
+        <div class="block block-12">
+          <div class="pui-message pui-message--warning">
+            <p><%= notice %></p>
+          </div>
         </div>
       <div>
       <% end %>
       <% if alert %>
-        <div class="pui-message pui-message--error">
-          <p class="alert"><%= alert %></p>
+        <div class="block block-12">
+          <div class="pui-message pui-message--error">
+            <p class="alert"><%= alert %></p>
+          </div>
         </div>
       <% end %>
       <%= yield %>
