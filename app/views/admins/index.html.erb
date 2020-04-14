@@ -1,0 +1,35 @@
+<div class="block block-12">
+  <table class="pui-table my-3">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>School</th>
+        <th>Slug</th>
+        <th>Approval</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.each do |user| %>
+        <tr>
+          <td><%= user.firstName %></td>
+          <td><%= user.lastName %></td>
+          <td><%= user.email %></td>
+          <td><%= user.slug %></td>
+          <td><%= user.approved %></td>
+          <td>
+            <% if user.approved === false %>
+              <%= form_with(model: @user, local: true, url: approvals_path(@school), html: { class: 'approval'}) do |f| %>
+                <%= f.hidden_field :id, value: user.id %>
+                <%= f.check_box :approved %>
+              <% end %>
+            <% else %>
+              <i class="pi-check"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

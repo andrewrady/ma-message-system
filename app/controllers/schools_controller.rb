@@ -17,7 +17,7 @@ class SchoolsController < ApplicationController
   def update
     @school = User.friendly.find(params[:id])
 
-    if(current_user.id != @school.id)
+    if(current_user.id != @school.id || current_user.approved === false)
       redirect_to school_path(@school)
     end
 

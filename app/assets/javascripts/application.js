@@ -14,3 +14,22 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener('turbolinks:load', function() {
+  var checkbox = document.getElementsByClassName('approval');
+  if(checkbox) {
+    for(var i = 0; i < checkbox.length; i++) {
+      checkbox[i]
+      var check = checkbox[i].querySelector('input[type="checkbox"]')
+      check.addEventListener('click', function() {
+        if(check.value) {
+          this.parentNode.submit();
+        }
+      })
+    }
+  }
+  var edit = document.getElementById('edit')
+  if(edit) {
+    new FroalaEditor(edit)
+  }
+})

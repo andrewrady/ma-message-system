@@ -4,9 +4,11 @@
     <title>Message System</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script type="text/javascript" src = "../../assets/froala_editor.pkgd.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/@ritterim/platform-ui@0.9.47/dist/platform-ui.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
@@ -25,7 +27,14 @@
             <div class="site-menu__item py-2">
               <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'site-menu__link' %>    
             </div>
-            <% end %>
+          <% else %>
+           <div class="site-menu__item py-2">
+              <%= link_to 'Signup', new_user_registration_path, class: 'site-menu__link' %>    
+            </div>
+            <div class="site-menu__item py-2">
+              <%= link_to 'Login', new_user_session_path, class: 'site-menu__link' %>    
+            </div>
+          <% end %>
         </nav>
       </div>
     </header>
@@ -41,7 +50,6 @@
             <p><%= notice %></p>
           </div>
         </div>
-      <div>
       <% end %>
       <% if alert %>
         <div class="block block-12">
