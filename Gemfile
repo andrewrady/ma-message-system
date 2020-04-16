@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'friendly_id'
 gem 'wysiwyg-rails'
-gem "pg", "~> 0.18"
+gem "pg", "~> 0.18.4"
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -38,9 +38,6 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-group :production do
-  gem 'rails_12factor'
-end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
