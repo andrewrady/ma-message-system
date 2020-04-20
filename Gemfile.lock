@@ -65,6 +65,8 @@ GEM
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    ckeditor (5.1.0)
+      orm_adapter (~> 0.5.0)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     devise (4.7.1)
@@ -204,6 +206,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chromedriver-helper
+  ckeditor
   devise
   friendly_id
   jbuilder (~> 2.5)
