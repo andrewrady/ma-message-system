@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require froala_editor.min.js
 //= require_tree .
 
 document.addEventListener('turbolinks:load', function() {
