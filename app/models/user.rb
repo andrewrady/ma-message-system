@@ -9,7 +9,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   after_create :create_short_link
-  before_destroy :destroy_short_link
+  # before_destroy :destroy_short_link
 
   def create_short_link
     Link.create(url: self.slug, shortSlug: random_string)
@@ -17,7 +17,9 @@ class User < ApplicationRecord
 
   def destroy_short_link
     link = Link.where(url: self.slug).first
-    link.destroy
+    if 
+      link.destroy
+    end
   end
 
   def random_string

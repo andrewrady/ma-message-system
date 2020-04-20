@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "schools#index"
   devise_for :admins
 
   devise_for :users

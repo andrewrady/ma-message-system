@@ -1,5 +1,9 @@
 class SchoolsController < ApplicationController
-  before_action :authenticate_user!, :except =>  [:show]
+  before_action :authenticate_user!, :except =>  [:index, :show]
+
+  def index
+    @schools = User.all
+  end
 
   def show
     @school = User.friendly.find(params[:id])

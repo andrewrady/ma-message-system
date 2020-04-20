@@ -21,6 +21,18 @@
       </label>
     </div>
 
+    <div class="block">
+      <label class="pui-form__field">City
+        <%= f.text_field :city %>
+      </label>
+    </div>
+
+    <div class="block">
+      <label class="pui-form__field">State
+        <%= f.select :state, options_for_select(us_states) %>
+      </label>
+    </div>
+
 
     <div class="block">
       <label class="pui-form__field">Email
