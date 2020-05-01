@@ -28,8 +28,4 @@ document.addEventListener('turbolinks:load', function() {
       })
     }
   }
-  var edit = document.getElementById('edit')
-  if(edit) {
-    new FroalaEditor(edit)
-  }
 })

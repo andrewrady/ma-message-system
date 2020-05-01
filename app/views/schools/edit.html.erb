@@ -14,7 +14,7 @@
             <%= @link.url %>
           </td>
           <td data-label="slug">
-            <%= "/s/#{@link.shortSlug}" %>
+            <%= "xav.news/s/#{@link.shortSlug}" %>
           </td>
           <td data-label="views">
             <%= @link.clicked %>
@@ -36,7 +36,7 @@
           </ul>
         </div>
       <% end %>
-      <%= f.text_area :content, :id => "edit" %>
+      <%= f.cktext_area :content, ckeditor: {toolbar: 'Full'} %>
 
       <div class="flex--center-content my-3">
         <%= f.submit('Submit', class: 'button button--lg' ) %>
